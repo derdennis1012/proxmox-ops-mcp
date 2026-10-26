@@ -1,0 +1,145 @@
+[project]
+name = "proxmox-ops-mcp"
+version = "0.1.0"
+description = "MCP server for Proxmox VE: cluster and Ceph diagnostics, backup audits, maintenance planning and guarded write operations."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Dennis Bölling" }]
+requires-python = ">=3.11"
+keywords = ["proxmox", "pve", "mcp", "model-context-protocol", "ceph", "devops", "sre", "llm", "ai-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: System :: Systems Administration",
+    "Topic :: System :: Monitoring",
+    "Typing :: Typed",
+]
+dependencies = [
+    "mcp>=2.3,<3",
+    "proxmoxer>=2.2,<3",
+    "requests>=2.32,<3",
+    "pydantic>=2.9,<3",
+    "pydantic-settings>=2.6,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/derdennis1012/proxmox-ops-mcp"
+Documentation = "https://github.com/derdennis1012/proxmox-ops-mcp/tree/main/docs"
+Issues = "https://github.com/derdennis1012/proxmox-ops-mcp/issues"
+Changelog = "https://github.com/derdennis1012/proxmox-ops-mcp/blob/main/CHANGELOG.md"
+
+[project.scripts]
+proxmox-ops-mcp = "proxmox_ops_mcp.cli:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+    "types-requests>=2.32",
+    "pre-commit>=4.0",
+]
+docs = [
+    "mkdocs-material>=9.6",
+]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/proxmox_ops_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "CHANGELOG.md", "LICENSE"]
+
+# --------------------------------------------------------------------------- #
+# Ruff
+# --------------------------------------------------------------------------- #
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+    "B",        # bugbear
+    "UP",       # pyupgrade
+    "SIM",      # simplify
+    "C4",       # comprehensions
+    "RUF",      # ruff-specific
+    "S",        # bandit
+    "N",        # pep8-naming
+    "PL",       # pylint
+    "PT",       # pytest style
+    "RET",      # return
+    "TID",      # tidy imports
+    "ERA",      # commented-out code
+    "D",        # pydocstyle
+]
+ignore = [
+    "D100", "D104", "D105", "D107",  # module/package/magic/init docstrings
+    "D203", "D213",                  # conflicting docstring styles
+    "PLR0913",                       # MCP tools legitimately take many params
+    "PLR2004",                       # thresholds are named where it matters
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S104", "S105", "S106", "D", "PLR2004", "PLC0415", "N818", "RUF012"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# --------------------------------------------------------------------------- #
+# Mypy
+# --------------------------------------------------------------------------- #
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+plugins = ["pydantic.mypy"]
+files = ["src", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["proxmoxer", "proxmoxer.*"]
+ignore_missing_imports = true
+
+# --------------------------------------------------------------------------- #
+# Pytest / coverage
+# --------------------------------------------------------------------------- #
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+xfail_strict = true
+markers = ["live: talks to a real Proxmox VE cluster (opt-in via PROXMOX_LIVE_ENV_FILE)"]
+filterwarnings = ["error"]
+
+[tool.coverage.run]
+branch = true
+source = ["proxmox_ops_mcp"]
+omit = ["tests/live/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 90
+exclude_also = [
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "\\.\\.\\.",
+]
