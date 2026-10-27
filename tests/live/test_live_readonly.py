@@ -85,12 +85,13 @@ async def test_compare_nodes_has_real_cpu_values(server: MCPServer) -> None:
 
 
 async def test_ceph_reports_or_explains(server: MCPServer) -> None:
-    error: str | None = None
     try:
-        report = await _call(server, "ceph_health")
+        report: dict[str, Any] | None = await _call(server, "ceph_health")
+        error = None
     except ToolError as exc:
-        error = str(exc)
-    if error is not None:
+        report, error = None, str(exc)
+    if report is None:
+        assert error is not None
         assert "Ceph" in error  # not installed / not permitted, explained cleanly
     else:
         assert report["ceph_health"].startswith("HEALTH_")

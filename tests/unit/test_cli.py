@@ -110,9 +110,8 @@ def test_serve_http_enforces_host_checks(monkeypatch: pytest.MonkeyPatch) -> Non
     assert (kwargs["host"], kwargs["port"]) == ("0.0.0.0", 8000)
     security = kwargs["transport_security"]
     assert security.enable_dns_rebinding_protection is True
-    assert "mcp.example.com:*" in security.allowed_hosts
-    assert "mcp.example.com:443" in security.allowed_hosts
-    assert "https://mcp.example.com:443" in security.allowed_origins
+    assert {"mcp.example.com:*", "mcp.example.com:443"} <= set(security.allowed_hosts)
+    assert {"https://mcp.example.com:443"} <= set(security.allowed_origins)
 
 
 def test_env_file_is_opt_in(

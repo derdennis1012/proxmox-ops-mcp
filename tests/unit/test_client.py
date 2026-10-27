@@ -115,8 +115,9 @@ class _FakeAPI:
         return _Resource(self, path)
 
     def respond(self, method: str, path: str, payload: dict[str, Any]) -> Any:
-        if self.behaviour is not None:
-            raise self.behaviour
+        behaviour = self.behaviour
+        if isinstance(behaviour, Exception):
+            raise behaviour
         return {"method": method, "path": path, "payload": payload}
 
 

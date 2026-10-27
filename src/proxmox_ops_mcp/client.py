@@ -103,11 +103,9 @@ class ProxmoxClient(Protocol):
 
     def get(self, path: str, **params: Any) -> Any:
         """Issue a GET request and return the decoded ``data`` payload."""
-        ...
 
     def post(self, path: str, **data: Any) -> Any:
         """Issue a POST request and return the decoded ``data`` payload."""
-        ...
 
 
 class ProxmoxerClient:
