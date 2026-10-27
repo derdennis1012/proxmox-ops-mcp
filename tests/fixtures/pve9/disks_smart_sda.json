@@ -1,0 +1,259 @@
+{
+ "attributes": [
+  {
+   "fail": "-",
+   "flags": "POSR--",
+   "id": "  1",
+   "name": "Raw_Read_Error_Rate",
+   "normalized": 78,
+   "raw": "63398328",
+   "threshold": 44,
+   "value": 78,
+   "worst": 64
+  },
+  {
+   "fail": "-",
+   "flags": "PO----",
+   "id": "  3",
+   "name": "Spin_Up_Time",
+   "normalized": 91,
+   "raw": "0",
+   "threshold": 0,
+   "value": 91,
+   "worst": 91
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": "  4",
+   "name": "Start_Stop_Count",
+   "normalized": 100,
+   "raw": "9",
+   "threshold": 20,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "PO--CK",
+   "id": "  5",
+   "name": "Reallocated_Sector_Ct",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 10,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "POSR--",
+   "id": "  7",
+   "name": "Seek_Error_Rate",
+   "normalized": 89,
+   "raw": "829900563",
+   "threshold": 45,
+   "value": 89,
+   "worst": 60
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": "  9",
+   "name": "Power_On_Hours",
+   "normalized": 44,
+   "raw": "49820",
+   "threshold": 0,
+   "value": 44,
+   "worst": 44
+  },
+  {
+   "fail": "-",
+   "flags": "PO--C-",
+   "id": " 10",
+   "name": "Spin_Retry_Count",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 97,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": " 12",
+   "name": "Power_Cycle_Count",
+   "normalized": 100,
+   "raw": "16",
+   "threshold": 20,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "PO-R--",
+   "id": " 18",
+   "name": "Head_Health",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 50,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": "187",
+   "name": "Reported_Uncorrect",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 0,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": "188",
+   "name": "Command_Timeout",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 0,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "-O---K",
+   "id": "190",
+   "name": "Airflow_Temperature_Cel",
+   "normalized": 72,
+   "raw": "28 (Min/Max 26/37)",
+   "threshold": 40,
+   "value": 72,
+   "worst": 51
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": "192",
+   "name": "Power-Off_Retract_Count",
+   "normalized": 100,
+   "raw": "773",
+   "threshold": 0,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "-O--CK",
+   "id": "193",
+   "name": "Load_Cycle_Count",
+   "normalized": 70,
+   "raw": "61377",
+   "threshold": 0,
+   "value": 70,
+   "worst": 70
+  },
+  {
+   "fail": "-",
+   "flags": "-O---K",
+   "id": "194",
+   "name": "Temperature_Celsius",
+   "normalized": 28,
+   "raw": "28 (0 20 0 0 0)",
+   "threshold": 0,
+   "value": 28,
+   "worst": 49
+  },
+  {
+   "fail": "-",
+   "flags": "-O-RC-",
+   "id": "195",
+   "name": "Hardware_ECC_Recovered",
+   "normalized": 36,
+   "raw": "63398328",
+   "threshold": 0,
+   "value": 36,
+   "worst": 1
+  },
+  {
+   "fail": "-",
+   "flags": "-O--C-",
+   "id": "197",
+   "name": "Current_Pending_Sector",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 0,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "----C-",
+   "id": "198",
+   "name": "Offline_Uncorrectable",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 0,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "-OSRCK",
+   "id": "199",
+   "name": "UDMA_CRC_Error_Count",
+   "normalized": 200,
+   "raw": "0",
+   "threshold": 0,
+   "value": 200,
+   "worst": 200
+  },
+  {
+   "fail": "-",
+   "flags": "PO---K",
+   "id": "200",
+   "name": "Pressure_Limit",
+   "normalized": 100,
+   "raw": "0",
+   "threshold": 1,
+   "value": 100,
+   "worst": 100
+  },
+  {
+   "fail": "-",
+   "flags": "------",
+   "id": "240",
+   "name": "Head_Flying_Hours",
+   "normalized": 100,
+   "raw": "23735h+44m+10.782s",
+   "threshold": 0,
+   "value": 100,
+   "worst": 253
+  },
+  {
+   "fail": "-",
+   "flags": "------",
+   "id": "241",
+   "name": "Total_LBAs_Written",
+   "normalized": 100,
+   "raw": "470887067410",
+   "threshold": 0,
+   "value": 100,
+   "worst": 253
+  },
+  {
+   "fail": "-",
+   "flags": "------",
+   "id": "242",
+   "name": "Total_LBAs_Read",
+   "normalized": 100,
+   "raw": "65034666646",
+   "threshold": 0,
+   "value": 100,
+   "worst": 253
+  }
+ ],
+ "health": "PASSED",
+ "type": "ata"
+}

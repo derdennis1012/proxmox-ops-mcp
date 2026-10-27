@@ -1,0 +1,49 @@
+{
+ "children": [
+  {
+   "children": [
+    {
+     "children": [
+      {
+       "cksum": 0,
+       "leaf": 1,
+       "msg": "",
+       "name": "/dev/nvme0n1p4",
+       "read": 0,
+       "state": "ONLINE",
+       "write": 0
+      },
+      {
+       "cksum": 0,
+       "leaf": 1,
+       "msg": "",
+       "name": "/dev/nvme1n1p4",
+       "read": 0,
+       "state": "ONLINE",
+       "write": 0
+      }
+     ],
+     "cksum": 0,
+     "leaf": 0,
+     "msg": "",
+     "name": "mirror-0",
+     "read": 0,
+     "state": "ONLINE",
+     "write": 0
+    }
+   ],
+   "cksum": 0,
+   "leaf": 0,
+   "msg": "",
+   "name": "tank",
+   "read": 0,
+   "state": "ONLINE",
+   "write": 0
+  }
+ ],
+ "errors": "No known data errors",
+ "leaf": 0,
+ "name": "tank",
+ "scan": "scrub repaired 0B in 00:05:43 with 0 errors on Sun Oct 11 00:29:47 2026",
+ "state": "ONLINE"
+}

@@ -1,0 +1,53 @@
+[
+ {
+  "by_id_link": "/dev/disk/by-id/nvme-SAMSUNG_MZQLB1T9HAJR-00007_SN43780123",
+  "devpath": "/dev/nvme0n1",
+  "gpt": 0,
+  "health": "PASSED",
+  "model": "SAMSUNG MZQLB1T9HAJR-00007",
+  "osdid": -1,
+  "osdid-list": null,
+  "rpm": 0,
+  "serial": "SN43780123",
+  "size": 1920383410176,
+  "type": "nvme",
+  "used": "linux_raid_member",
+  "vendor": "unknown",
+  "wearout": 96,
+  "wwn": "eui.0000000000000000"
+ },
+ {
+  "by_id_link": "/dev/disk/by-id/nvme-SAMSUNG_MZQLB1T9HAJR-00007_SN39476126_1",
+  "devpath": "/dev/nvme1n1",
+  "gpt": 0,
+  "health": "PASSED",
+  "model": "SAMSUNG MZQLB1T9HAJR-00007",
+  "osdid": -1,
+  "osdid-list": null,
+  "rpm": 0,
+  "serial": "SN39476126",
+  "size": 1920383410176,
+  "type": "nvme",
+  "used": "linux_raid_member",
+  "vendor": "unknown",
+  "wearout": 97,
+  "wwn": "eui.0000000000000000"
+ },
+ {
+  "by_id_link": "/dev/disk/by-id/ata-ST12000NM0248-2H3111_SN53305839",
+  "devpath": "/dev/sda",
+  "gpt": 1,
+  "health": "PASSED",
+  "model": "ST12000NM0248-2H3111",
+  "osdid": -1,
+  "osdid-list": null,
+  "rpm": "7200",
+  "serial": "SN53305839",
+  "size": 12000138625024,
+  "type": "hdd",
+  "used": "ZFS",
+  "vendor": "ATA     ",
+  "wearout": "N/A",
+  "wwn": "eui.0000000000000000"
+ }
+]

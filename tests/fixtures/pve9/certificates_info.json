@@ -1,0 +1,32 @@
+[
+ {
+  "filename": "pve-root-ca.pem",
+  "fingerprint": "AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA",
+  "issuer": "/CN=Proxmox Virtual Environment/OU=00000000-0000-0000-0000-000000000000/O=PVE Cluster Manager CA",
+  "notafter": 2100015640,
+  "notbefore": 1784655640,
+  "pem": "-----BEGIN CERTIFICATE-----\n(redacted)\n-----END CERTIFICATE-----\n",
+  "public-key-bits": 4096,
+  "public-key-type": "rsaEncryption",
+  "san": [],
+  "subject": "/CN=Proxmox Virtual Environment/OU=00000000-0000-0000-0000-000000000000/O=PVE Cluster Manager CA"
+ },
+ {
+  "filename": "pve-ssl.pem",
+  "fingerprint": "AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA:AA",
+  "issuer": "/CN=Proxmox Virtual Environment/OU=00000000-0000-0000-0000-000000000000/O=PVE Cluster Manager CA",
+  "notafter": 1847727640,
+  "notbefore": 1784655640,
+  "pem": "-----BEGIN CERTIFICATE-----\n(redacted)\n-----END CERTIFICATE-----\n",
+  "public-key-bits": 2048,
+  "public-key-type": "rsaEncryption",
+  "san": [
+   "127.0.0.1",
+   "0000:0000:0000:0000:0000:0000:0000:0001",
+   "localhost",
+   "fd00:0000:0000:0000:0000:0000:0000:0002",
+   "pve1"
+  ],
+  "subject": "/OU=PVE Cluster Node/O=Proxmox Virtual Environment/CN=pve1"
+ }
+]

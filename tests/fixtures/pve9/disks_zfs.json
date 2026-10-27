@@ -1,0 +1,20 @@
+[
+ {
+  "alloc": 1377789198336,
+  "dedup": 1,
+  "frag": 0,
+  "free": 10613759492096,
+  "health": "ONLINE",
+  "name": "backup",
+  "size": 11991548690432
+ },
+ {
+  "alloc": 244579041280,
+  "dedup": 1,
+  "frag": 27,
+  "free": 1542127353856,
+  "health": "ONLINE",
+  "name": "tank",
+  "size": 1786706395136
+ }
+]

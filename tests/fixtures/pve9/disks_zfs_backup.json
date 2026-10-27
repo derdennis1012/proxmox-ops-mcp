@@ -1,0 +1,29 @@
+{
+ "children": [
+  {
+   "children": [
+    {
+     "cksum": 0,
+     "leaf": 1,
+     "msg": "",
+     "name": "/dev/sda1",
+     "read": 0,
+     "state": "ONLINE",
+     "write": 0
+    }
+   ],
+   "cksum": 0,
+   "leaf": 0,
+   "msg": "",
+   "name": "backup",
+   "read": 0,
+   "state": "ONLINE",
+   "write": 0
+  }
+ ],
+ "errors": "No known data errors",
+ "leaf": 0,
+ "name": "backup",
+ "scan": "scrub repaired 0B in 01:04:32 with 0 errors on Sun Oct 11 01:28:34 2026",
+ "state": "ONLINE"
+}
