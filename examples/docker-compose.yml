@@ -1,0 +1,28 @@
+# Streamable HTTP deployment. The server has no authentication of its own:
+# expose it only through an authenticating reverse proxy (OAuth2 proxy, mTLS, VPN).
+services:
+  proxmox-ops-mcp:
+    image: ghcr.io/derdennis1012/proxmox-ops-mcp:latest
+    command:
+      - serve
+      - --transport=streamable-http
+      - --host=0.0.0.0
+      - --allow-remote
+      - --allowed-host=mcp.example.com
+    environment:
+      PROXMOX_HOST: pve1.example.com
+      PROXMOX_TOKEN_ID: mcp@pve!ops
+      PROXMOX_TOKEN_SECRET: ${PROXMOX_TOKEN_SECRET:?set in your shell or a .env next to this file}
+      PROXMOX_CA_BUNDLE: /certs/pve-root-ca.pem
+      PROXMOX_AUDIT_LOG: /var/log/proxmox-ops-mcp/audit.jsonl
+    volumes:
+      - ./pve-root-ca.pem:/certs/pve-root-ca.pem:ro
+      - audit:/var/log/proxmox-ops-mcp
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    expose: ["8000"]   # reach it from the proxy network only
+    restart: unless-stopped
+
+volumes:
+  audit:
