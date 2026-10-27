@@ -92,7 +92,9 @@ claude mcp add proxmox-ops \
   -- uvx proxmox-ops-mcp
 ```
 
-For Claude Desktop, Cursor and Docker see [examples/](examples/).
+Claude Desktop, Cursor, VS Code, OpenAI Codex, Gemini CLI, Hermes Agent, OpenClaw and
+Docker: see [docs/clients.md](docs/clients.md). It also covers what to watch out for when
+an autonomous agent uses the server.
 
 ## Tools
 

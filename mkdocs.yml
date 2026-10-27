@@ -58,6 +58,7 @@ markdown_extensions:
 nav:
   - Overview: index.md
   - Getting started: getting-started.md
+  - Connect a client: clients.md
   - Proxmox setup: proxmox-setup.md
   - Configuration: configuration.md
   - Tools and findings: tools.md

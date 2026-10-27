@@ -8,8 +8,9 @@ description: >-
 
 # proxmox-ops-mcp
 
-An [MCP](https://modelcontextprotocol.io) server that lets an AI assistant (Claude,
-Cursor, VS Code and other MCP clients) look after a Proxmox VE cluster. It answers the
+An [MCP](https://modelcontextprotocol.io) server that lets an AI assistant look after a
+Proxmox VE cluster. It works with Claude Code, Claude Desktop, Cursor, VS Code, OpenAI
+Codex, Gemini CLI, Hermes Agent, OpenClaw and any other MCP client. It answers the
 questions an administrator actually asks, and does the API work needed to answer them
 correctly:
 

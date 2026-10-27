@@ -70,78 +70,18 @@ for a certificate pin; put the result into `PROXMOX_TLS_FINGERPRINT`.
 
 ## 4. Connect your MCP client
 
-=== "Claude Code"
+For Claude Code:
 
-    ```bash
-    claude mcp add proxmox-ops \
-      -e PROXMOX_HOST=pve1.example.com \
-      -e PROXMOX_TOKEN_ID='mcp@pve!ops' \
-      -e PROXMOX_TOKEN_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-      -- uvx proxmox-ops-mcp
-    ```
+```bash
+claude mcp add proxmox-ops --scope user \
+  -e PROXMOX_HOST=pve1.example.com \
+  -e PROXMOX_TOKEN_ID='mcp@pve!ops' \
+  -e PROXMOX_TOKEN_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+  -- uvx proxmox-ops-mcp
+```
 
-=== "Claude Desktop"
-
-    In `claude_desktop_config.json`:
-
-    ```json
-    {
-      "mcpServers": {
-        "proxmox-ops": {
-          "command": "uvx",
-          "args": ["proxmox-ops-mcp"],
-          "env": {
-            "PROXMOX_HOST": "pve1.example.com",
-            "PROXMOX_TOKEN_ID": "mcp@pve!ops",
-            "PROXMOX_TOKEN_SECRET": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-          }
-        }
-      }
-    }
-    ```
-
-=== "Cursor"
-
-    In `~/.cursor/mcp.json` (or `.cursor/mcp.json` in a project), the same block as for
-    Claude Desktop.
-
-=== "VS Code"
-
-    In `.vscode/mcp.json`:
-
-    ```json
-    {
-      "inputs": [
-        { "id": "pve-secret", "type": "promptString", "password": true,
-          "description": "Proxmox API token secret" }
-      ],
-      "servers": {
-        "proxmox-ops": {
-          "command": "uvx",
-          "args": ["proxmox-ops-mcp"],
-          "env": {
-            "PROXMOX_HOST": "pve1.example.com",
-            "PROXMOX_TOKEN_ID": "mcp@pve!ops",
-            "PROXMOX_TOKEN_SECRET": "${input:pve-secret}"
-          }
-        }
-      }
-    }
-    ```
-
-=== "Docker"
-
-    ```json
-    {
-      "mcpServers": {
-        "proxmox-ops": {
-          "command": "docker",
-          "args": ["run", "--rm", "-i", "--env-file", "/path/to/proxmox.env",
-                   "ghcr.io/derdennis1012/proxmox-ops-mcp"]
-        }
-      }
-    }
-    ```
+Claude Desktop, Cursor, VS Code, OpenAI Codex, Gemini CLI, Hermes Agent, OpenClaw and
+Docker are covered step by step in [Connect a client](clients.md).
 
 ## 5. Ask something
 

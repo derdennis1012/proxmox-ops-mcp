@@ -2,6 +2,7 @@
 
 | Document | Contents |
 |---|---|
+| [clients.md](clients.md) | Claude Code, Claude Desktop, Cursor, VS Code, Codex, Gemini CLI, Hermes, OpenClaw, Docker |
 | [proxmox-setup.md](proxmox-setup.md) | Creating least-privilege API tokens for each access tier |
 | [configuration.md](configuration.md) | All settings, CLI flags, transports and client examples |
 | [tools.md](tools.md) | Every tool, its parameters and all finding codes |
