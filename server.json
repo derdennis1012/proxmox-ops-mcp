@@ -1,0 +1,108 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.derdennis1012/proxmox-ops-mcp",
+  "title": "Proxmox Ops",
+  "description": "Proxmox VE diagnostics, backup audits, maintenance planning and guarded VM operations.",
+  "repository": {
+    "url": "https://github.com/derdennis1012/proxmox-ops-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://derdennis1012.github.io/proxmox-ops-mcp/",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "proxmox-ops-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PROXMOX_HOST",
+          "description": "Hostname or IP of any cluster node",
+          "isRequired": true,
+          "placeholder": "pve1.example.com"
+        },
+        {
+          "name": "PROXMOX_TOKEN_ID",
+          "description": "API token id, user@realm!tokenname",
+          "isRequired": true,
+          "placeholder": "mcp@pve!ops"
+        },
+        {
+          "name": "PROXMOX_TOKEN_SECRET",
+          "description": "API token secret",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "PROXMOX_ACCESS_TIER",
+          "description": "read_only, operator or admin",
+          "default": "read_only",
+          "choices": [
+            "read_only",
+            "operator",
+            "admin"
+          ]
+        },
+        {
+          "name": "PROXMOX_TLS_FINGERPRINT",
+          "description": "SHA-256 fingerprint to pin the node certificate (optional)"
+        },
+        {
+          "name": "PROXMOX_CA_BUNDLE",
+          "description": "CA bundle for the cluster certificate (optional)",
+          "format": "filepath"
+        }
+      ]
+    },
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/derdennis1012/proxmox-ops-mcp:0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PROXMOX_HOST",
+          "description": "Hostname or IP of any cluster node",
+          "isRequired": true,
+          "placeholder": "pve1.example.com"
+        },
+        {
+          "name": "PROXMOX_TOKEN_ID",
+          "description": "API token id, user@realm!tokenname",
+          "isRequired": true,
+          "placeholder": "mcp@pve!ops"
+        },
+        {
+          "name": "PROXMOX_TOKEN_SECRET",
+          "description": "API token secret",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "PROXMOX_ACCESS_TIER",
+          "description": "read_only, operator or admin",
+          "default": "read_only",
+          "choices": [
+            "read_only",
+            "operator",
+            "admin"
+          ]
+        },
+        {
+          "name": "PROXMOX_TLS_FINGERPRINT",
+          "description": "SHA-256 fingerprint to pin the node certificate (optional)"
+        },
+        {
+          "name": "PROXMOX_CA_BUNDLE",
+          "description": "CA bundle for the cluster certificate (optional)",
+          "format": "filepath"
+        }
+      ]
+    }
+  ]
+}
