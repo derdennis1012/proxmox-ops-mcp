@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest a new diagnostic, tool or improvement.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Which operational problem should this solve?
+      description: Describe the situation in your cluster, not the implementation.
+      placeholder: "When a node is slow, I have to check X, Y and Z by hand..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: Inputs, outputs and - for write operations - the safety story.
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Which access tier would this need?
+      options: [read_only, operator, admin, not sure]

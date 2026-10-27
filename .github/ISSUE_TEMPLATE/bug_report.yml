@@ -1,0 +1,51 @@
+name: Bug report
+description: Something does not work as documented.
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. **Never paste API tokens, secrets or
+        internal hostnames you do not want to be public.**
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include the tool name, the arguments and the full error or wrong output.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: proxmox-ops-mcp version
+      placeholder: "output of `proxmox-ops-mcp --version`"
+    validations:
+      required: true
+  - type: input
+    id: pve-version
+    attributes:
+      label: Proxmox VE version
+      placeholder: "e.g. 8.3.2 (pveversion)"
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: MCP client
+      options: [Claude Code, Claude Desktop, Cursor, VS Code, Other]
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Access tier
+      options: [read_only, operator, admin]
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Cluster size, Ceph yes/no, relevant (redacted) API responses.
