@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "proxmox-ops": {
+      "command": "uvx",
+      "args": ["proxmox-ops-mcp"],
+      "env": {
+        "PROXMOX_HOST": "${PROXMOX_HOST}",
+        "PROXMOX_TOKEN_ID": "${PROXMOX_TOKEN_ID}",
+        "PROXMOX_TOKEN_SECRET": "${PROXMOX_TOKEN_SECRET}",
+        "PROXMOX_ACCESS_TIER": "read_only"
+      }
+    }
+  }
+}

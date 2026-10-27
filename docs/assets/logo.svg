@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="proxmox-ops-mcp">
+  <rect width="64" height="64" rx="12" fill="#15171C"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+    <path d="M16 19H48" stroke="#D4D7DD"/>
+    <path d="M16 32H25L29 25L35 39L39 32H48" stroke="#E8590C"/>
+    <path d="M16 45H48" stroke="#D4D7DD"/>
+  </g>
+</svg>

@@ -1,0 +1,67 @@
+site_name: proxmox-ops-mcp
+site_description: >-
+  MCP server for Proxmox VE: cluster, Ceph, ZFS and disk diagnostics, backup audits,
+  maintenance planning and guarded VM operations for AI assistants.
+site_url: https://derdennis1012.github.io/proxmox-ops-mcp/
+repo_url: https://github.com/derdennis1012/proxmox-ops-mcp
+repo_name: derdennis1012/proxmox-ops-mcp
+edit_uri: edit/main/docs/
+copyright: MIT licensed · Proxmox is a trademark of Proxmox Server Solutions GmbH; this project is not affiliated with it.
+
+exclude_docs: |
+  README.md
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-sunny, name: Light mode }
+  font: false
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - { name: mermaid, class: mermaid, format: !!python/name:pymdownx.superfences.fence_code_format }
+  - pymdownx.tabbed: { alternate_style: true }
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets: { base_path: ["."], check_paths: true }
+
+nav:
+  - Overview: index.md
+  - Getting started: getting-started.md
+  - Proxmox setup: proxmox-setup.md
+  - Configuration: configuration.md
+  - Tools and findings: tools.md
+  - Security model: security-model.md
+  - Architecture: architecture.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md

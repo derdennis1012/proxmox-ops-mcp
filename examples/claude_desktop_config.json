@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "proxmox-ops": {
+      "command": "uvx",
+      "args": ["proxmox-ops-mcp"],
+      "env": {
+        "PROXMOX_HOST": "pve1.example.com",
+        "PROXMOX_TOKEN_ID": "mcp@pve!ops",
+        "PROXMOX_TOKEN_SECRET": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "PROXMOX_CA_BUNDLE": "/path/to/pve-root-ca.pem",
+        "PROXMOX_ACCESS_TIER": "read_only"
+      }
+    }
+  }
+}
