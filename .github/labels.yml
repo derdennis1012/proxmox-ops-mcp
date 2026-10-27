@@ -1,0 +1,12 @@
+# Source of truth for repository labels. Apply with:
+#   gh label create <name> --color <color> --description <description> --force
+- { name: bug, color: d73a4a, description: "Something does not work as documented" }
+- { name: enhancement, color: a2eeef, description: "New diagnostic, tool or improvement" }
+- { name: security, color: b60205, description: "Security hardening (vulnerabilities go to advisories)" }
+- { name: documentation, color: 0075ca, description: "Docs only" }
+- { name: breaking, color: 5319e7, description: "Changes finding codes, tool schemas or config" }
+- { name: triage, color: fbca04, description: "Needs a maintainer's first look" }
+- { name: good first issue, color: 7057ff, description: "Well-scoped, good for newcomers" }
+- { name: help wanted, color: 008672, description: "Contributions especially welcome" }
+- { name: needs-pve-verification, color: c5def5, description: "Behaviour must be confirmed on a real cluster" }
+- { name: skip-changelog, color: ededed, description: "Exclude from release notes" }
