@@ -138,11 +138,15 @@ def register(server: MCPServer, ctx: ToolContext) -> None:
     @server.tool(title="Recent failed tasks", annotations=READ_ONLY)
     @guarded
     def recent_task_failures(
-        hours: Annotated[int, Field(ge=1, le=24 * 30)] = 24,
+        hours: Annotated[
+            int, Field(ge=1, le=24 * 30, description="Time window to look back, in hours.")
+        ] = 24,
         task_type: Annotated[
             str | None, Field(description="e.g. 'vzdump', 'qmigrate', 'qmstart'.")
         ] = None,
-        limit: Annotated[int, Field(ge=1, le=500)] = 50,
+        limit: Annotated[
+            int, Field(ge=1, le=500, description="Maximum number of failed tasks to return.")
+        ] = 50,
     ) -> FailedTaskReport:
         """List tasks that failed recently, grouped by type. Good first stop after an incident.
 

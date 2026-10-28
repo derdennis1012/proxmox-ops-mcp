@@ -160,7 +160,9 @@ def register(server: MCPServer, ctx: ToolContext) -> None:
             Literal["qemu", "lxc"] | None, Field(description="'qemu' (VM) or 'lxc' (container).")
         ] = None,
         tag: Annotated[str | None, Field(description="Only guests carrying this tag.")] = None,
-        include_templates: bool = False,
+        include_templates: Annotated[
+            bool, Field(description="Also list VM and container templates.")
+        ] = False,
     ) -> GuestList:
         """List VMs and containers across the cluster with resource usage, tags and HA state."""
         if node:
@@ -194,7 +196,10 @@ def register(server: MCPServer, ctx: ToolContext) -> None:
     def get_task_status(
         node: Annotated[str, Field(description="Node the task ran on.")],
         upid: Annotated[str, Field(description="Task id (UPID) as returned by write tools.")],
-        log_lines: Annotated[int, Field(ge=0, le=500)] = 50,
+        log_lines: Annotated[
+            int,
+            Field(ge=0, le=500, description="Log lines to return from the end of the task log."),
+        ] = 50,
     ) -> TaskStatus:
         """Return the state of a Proxmox task and the tail of its log."""
         validate_node(node)

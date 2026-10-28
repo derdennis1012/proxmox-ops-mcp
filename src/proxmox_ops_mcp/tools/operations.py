@@ -255,7 +255,9 @@ def _register_operator_tools(server: MCPServer, ctx: ToolContext) -> None:
     def create_snapshot(
         vmid: Annotated[int, Field(description="VM or container id.")],
         name: Annotated[str, Field(description="Snapshot name: letter first, [A-Za-z0-9_-].")],
-        description: Annotated[str, Field(max_length=1024)] = "",
+        description: Annotated[
+            str, Field(max_length=1024, description="Free-text note stored with the snapshot.")
+        ] = "",
         include_ram: Annotated[
             bool, Field(description="VMs only: also save RAM state (larger, slower).")
         ] = False,
